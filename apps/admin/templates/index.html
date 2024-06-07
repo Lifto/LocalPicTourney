@@ -1,0 +1,51 @@
+<!-- project/app/admin/templates/admin/listview.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+    <style>
+        .button {
+          color: white;
+          border-radius: 4px;
+          text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+        }
+        .button.red {
+          background: #ca3c3c;
+        }
+        .button.blue {
+          background: #3caeca;
+        }
+        .listview > a {
+          margin: 10px 0 10px 20px;
+        }
+        .listview .pure-g {
+          margin: 2px auto;
+          padding: 10px 0 10px 20px;
+          background: #f4f6ff;
+        }
+        .listview .pure-u {
+          overflow: hidden;
+      }
+    </style>
+</head>
+<body>
+<div>LocalPicTourney Admin Interface</div>
+
+<div class="listview">
+<a class="pure-button pure-button-primary" href="users">{{ user_flags|length }} User flags</a>
+<a class="pure-button pure-button-primary" href="photos">{{ photo_flags|length }} Photo flags</a>
+<a class="pure-button pure-button-primary" href="photo_comments">{{ comment_flags|length }} Comment flags</a>
+<form>
+  User name:<br>
+  <input type="text" name="user_name"><br>
+    <input type="submit" value="Find" action="foobar" method="get">
+</form>
+{% for key, value in user_dict.iteritems() %}
+    <li>{{ key }} - {{ value }}</li>
+{% endfor %}
+</div>
+
+</body>
+</html>

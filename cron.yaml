@@ -1,0 +1,14 @@
+version: 1
+cron:
+- name: "score"
+  url: "/worker_score_callback"
+  schedule: "*/5 * * * *"
+- name: "tag_trends"
+  url: "/worker_tag_trends_callback"
+  schedule: "*/5 * * * *"
+- name: "filtered_leaderboard"
+  url: "/worker_filtered_leaderboard_callback"
+  schedule: "0 * * * *"
+#- name: "awards"
+#  url: "/worker_awards_callback"
+#  schedule: "0 8 * * fri"
